@@ -4,7 +4,7 @@ import MainApp from './components/MainApp';
 import React, { useState } from 'react';
 
 function App() {
-  const [baseCurrency, setBaseCurrency] = useState('');
+  const [baseCurrency, setBaseCurrency] = useState('EUR');
   const [currencies, setCurrencies] = useState([]);
   const [date, setDate] = useState('');
 
