@@ -1,21 +1,23 @@
 import './App.css';
 import Header from './components/Header';
-import Api from './components/Api';
+import MainApp from './components/MainApp';
 import React, { useState } from 'react';
 
 function App() {
   const [baseCurrency, setBaseCurrency] = useState('');
-  const [data, setData] = useState([]);
+  const [currencies, setCurrencies] = useState([]);
+  const [date, setDate] = useState('');
 
   return (
     <div className="App">
-      <Header baseCurrency={baseCurrency} setBaseCurrency={setBaseCurrency} data={data} />
-      <Api
-        date={data == true ? data.date : 'latest'}
+      <Header date={date} setDate={setDate} />
+      <MainApp
+        date={date ? date : 'latest'}
+        setDate={setDate}
         baseCurrency={baseCurrency}
         setBaseCurrency={setBaseCurrency}
-        data={data}
-        setData={setData}
+        currencies={currencies}
+        setCurrencies={setCurrencies}
       />
     </div>
   );
