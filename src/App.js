@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import MainApp from './components/MainApp';
 import React, { useState } from 'react';
+import { Grid } from '@material-ui/core';
 
 function App() {
   const [baseCurrency, setBaseCurrency] = useState('EUR');
@@ -10,15 +11,19 @@ function App() {
 
   return (
     <div className="App">
-      <Header date={date} setDate={setDate} />
-      <MainApp
-        date={date ? date : 'latest'}
-        setDate={setDate}
-        baseCurrency={baseCurrency}
-        setBaseCurrency={setBaseCurrency}
-        currencies={currencies}
-        setCurrencies={setCurrencies}
-      />
+      <Grid container direction="row" justify="center" alignItems="center">
+        <Header item xs={12} date={date} setDate={setDate} />
+        <MainApp
+          item
+          xs={12}
+          date={date ? date : 'latest'}
+          setDate={setDate}
+          baseCurrency={baseCurrency}
+          setBaseCurrency={setBaseCurrency}
+          currencies={currencies}
+          setCurrencies={setCurrencies}
+        />
+      </Grid>
     </div>
   );
 }
